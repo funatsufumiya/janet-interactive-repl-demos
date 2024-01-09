@@ -14,7 +14,7 @@ $ jpm install jaylib
 
 ## hello-netrepl
 
-server prints "hello" every seconds, client repl can change the message and delay interval
+The server prints "hello" every seconds, client repl can change the message and delay interval. (after 5 sec, value change worker will automatically change the message to "hello world")
 
 - first, start the server
 
@@ -34,7 +34,7 @@ $ janet hello-netrepl-client.janet
 
 ## raylib (jaylib)
 
-raylib interactive demo, client repl can change the colors and draw function itself
+Raylib interactive demo, client repl can change the colors and draw function itself
 
 - first, start the server
 
