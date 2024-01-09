@@ -2,6 +2,16 @@
 
 demos of interactive repl communication using netrepl
 
+## Screenshots
+
+- raylib (jaylib)
+
+![raylib-screenshot](screenshots/screenshot-repl-raylib.png)
+
+- hello-netrepl
+
+![hello-screenshot](screenshots/screenshot-repl-hello.png)
+
 ## Prerequisites
 
 - install [janet](https://janet-lang.org/)
