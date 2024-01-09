@@ -49,8 +49,8 @@
       [[x 0] [x 100] [50 y] [10 180]]
       (env :line-strip-color))))
 
-(setdyn :draw_fn_sexp nil)
-(setdyn :draw draw)
+(put env :draw_fn_sexp nil)
+(put env :draw draw)
 
 (defn mainloop [env]
   (while (not (window-should-close))
