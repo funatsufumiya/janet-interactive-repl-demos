@@ -10,3 +10,10 @@
 # (setdyn :draw_fn_sexp draw2)
 # (def draw3 '(fn [] (clear-background [0 0 0]) (let [[x y] (get-mouse-position)] (draw-rectangle (- (math/floor x) 30) (- (math/floor y) 30) 60 60 :red)) ))
 # (setdyn :draw_fn_sexp draw3)
+
+
+# NOTE:
+# (setdyn :aaa bbb)
+#   can be replaced to
+# (def env (curenv))
+# (put env :aaa bbb)
