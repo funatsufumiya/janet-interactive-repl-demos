@@ -2,8 +2,8 @@
 
 (def env (make-env))
 
-(setdyn :message "hello")
-(setdyn :delay 1)
+(put env :message "hello")
+(put env :delay 1)
 
 (defn date-str []
   (def d (os/date))
@@ -24,7 +24,7 @@
 
 (defn value-change-worker [env del mes]
   (ev/sleep del)
-  (setdyn :message mes)
+  (put env :message mes)
   (print "(value-change-worker) changed message to " mes))
 
 # (defn repl-server [env]

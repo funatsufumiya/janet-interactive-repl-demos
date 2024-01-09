@@ -2,13 +2,13 @@
 (use jaylib)
 
 (def env (make-env))
-(setdyn :circle-size 31.4)
-(setdyn :circle-center-color :lime)
-(setdyn :circle-outer-color :red)
-(setdyn :poly-color :magenta)
-(setdyn :line-bezier-color :pink)
-(setdyn :line-ex-color :sky-blue)
-(setdyn :line-strip-color :ray-white)
+(put env :circle-size 31.4)
+(put env :circle-center-color :lime)
+(put env :circle-outer-color :red)
+(put env :poly-color :magenta)
+(put env :line-bezier-color :pink)
+(put env :line-ex-color :sky-blue)
+(put env :line-strip-color :ray-white)
 
 (init-window 300 300 "Test Game")
 (set-target-fps 60)
@@ -62,8 +62,8 @@
       (not (nil? (env :draw_fn_sexp)))
         (do
           (def f (eval (env :draw_fn_sexp)))
-          (setdyn :draw_fn_sexp nil)
-          (setdyn :draw f)
+          (put env :draw_fn_sexp nil)
+          (put env :draw f)
           ((env :draw))))
 
     (ev/sleep 0.01)
