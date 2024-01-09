@@ -49,13 +49,23 @@
       [[x 0] [x 100] [50 y] [10 180]]
       (env :line-strip-color))))
 
+(put env :draw_fn_sexp nil)
 (put env :draw draw)
 
 (defn mainloop [env]
   (while (not (window-should-close))
     (begin-drawing)
 
-    ((env :draw))
+    (cond
+      (nil? (env :draw_fn_sexp))
+        ((env :draw))
+      (not (nil? (env :draw_fn_sexp)))
+        (do
+          (def f (eval (env :draw_fn_sexp)))
+          (put env :draw_fn_sexp nil)
+          (put env :draw f)
+          ((env :draw))))
+
     (ev/sleep 0.01)
 
     (end-drawing)))
