@@ -37,9 +37,8 @@ $ janet hello-netrepl-server.janet
 ```bash
 $ janet hello-netrepl-client.janet
 
-# [repl] $ (def env (curenv))
-# [repl] $ (put env :message "hello from repl")
-# [repl] $ (put env :delay 2)
+# [repl] $ (setdyn :message "hello from repl")
+# [repl] $ (setdyn :delay 2)
 ```
 
 ## raylib (jaylib)
@@ -57,13 +56,12 @@ $ janet raylib-server.janet
 ```bash
 $ janet raylib-client.janet
 
-# [repl] $ (def env (curenv))
-# [repl] $ (get env :circle-outer-color)
-# [repl] $ (put env :circle-outer-color :blue)
-# [repl] $ (get env :line-bezier-color)
-# [repl] $ (put env :line-bezier-color :orange)
+# [repl] $ (dyn :circle-outer-color)
+# [repl] $ (setdyn :circle-outer-color :blue)
+# [repl] $ (dyn :line-bezier-color)
+# [repl] $ (setdyn :line-bezier-color :orange)
 # [repl] $ (def draw2 '(fn [] (clear-background [0 0 0]) ))
-# [repl] $ (put env :draw_fn_sexp draw2)
+# [repl] $ (setdyn :draw_fn_sexp draw2)
 # [repl] $ (def draw3 '(fn [] (clear-background [0 0 0]) (let [[x y] (get-mouse-position)] (draw-rectangle (- (math/floor x) 30) (- (math/floor y) 30) 60 60 :red)) ))
-# [repl] $ (put env :draw_fn_sexp draw3)
+# [repl] $ (setdyn :draw_fn_sexp draw3)
 ```
