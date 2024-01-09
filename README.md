@@ -1,4 +1,4 @@
-# Janet interactive repl (netrepl) server client demo
+# Janet interactive repl (netrepl) communication demos
 
 demos of interactive repl communication using netrepl
 
